@@ -2,7 +2,8 @@
 /**
  * printf_number - prints integer or decimal
  * @args: argument to print
- * @is_decimal: flag to specify whether to print as decimal (1) or integer (0)
+ *
+ * @args: flag to specify whether to print as decimal (1) or integer (0)
  * Return: number of characters printed
  */
 
