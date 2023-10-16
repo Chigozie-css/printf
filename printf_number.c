@@ -9,41 +9,53 @@
 
 int printf_number(va_list args)
 {
-	int n = va_arg(args, int);
-	int num, last = n % 10, digit, exp = 1;
-	int i = 1;
+	int num = va_arg(args, int);
+	int n = 0;
 
-	n = n / 10;
-	num = n;
+	n += printf("%d", num);
+	return (n);
+}
 
-	if (last < 0)
+/**
+ * custom_printf - A custom printf function for basic output formatting.
+ * @format: A format string specifying the output format.
+ * @...: A variable number of arguments to insert into the format string.
+ *
+ * It supports integer format specifiers "d" and "i."
+ * The function returns the total number of characters printed.
+ */
+
+int custom_printf(const char *format, ...)
+{
+	va_list args;
+
+	va_start(args, format);
+	int n = 0;
+
+	for (int i = 0; format[i] != '\0'; i++)
 	{
-		_putchar('-');
-		num = -num;
-		n = -n;
-		last = -last;
-		i++;
-	}
-
-	if (num > 0)
-	{
-		while (num / 10 != 0)
+		if (format[i] == '%' && (format[i + 1] == 'd' || format[i + 1] == 'i'))
 		{
-			exp = exp * 10;
-			num = num / 10;
-		}
-		num = n;
-		while (exp > 0)
-		{
-			digit = num / exp;
-			_putchar(digit + '0');
-			num = num - (digit * exp);
-			exp = exp / 10;
+			n += printf_number(args);
 			i++;
 		}
+		else
+		{
+			putchar(format[i]);
+			n++;
+		}
 	}
+	va_end(args);
+	return (n);
+}
 
-	_putchar(last + '0');
+int main(void)
+{
+	int num1 = 42;
+	int num2 = -123;
 
-	return (i);
+	int printed = custom_printf("This is a custom printf: %d and %i\n", num1, num2);
+
+	printf("n: %d\n", printed);
+	return (0);
 }

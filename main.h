@@ -22,6 +22,7 @@ typedef struct format
 	int (*f)();
 } convert_match;
 
+int custom_printf(const char *format, ...);
 int printf_number(va_list args);
 int printf_int(va_list args);
 int printf_dec(va_list args);
