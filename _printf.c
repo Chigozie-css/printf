@@ -48,7 +48,9 @@ int _printf(const char *format, ...)
 			else if (*format == 's')
 			{
 				char *string = va_arg(args_list, char*);
+
 				int stringLen = 0;
+
 				while (string[stringLen] != '\0')
 					stringLen++;
 				write(1, string, stringLen);
