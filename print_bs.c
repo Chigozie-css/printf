@@ -79,8 +79,8 @@ int print_octal(va_list argsList, flags_t *f)
 	unsigned int nb = va_arg(argsList, unsigned int);
 	char *string = convert(nb, 8, 0);
 	int check = 0;
-
-	if (f->hash == 1 & 8 string[o] != '0*)
+	
+	if (f->hash == 1 && string[0] != '0')
 		check += _putchar(0);
 	check += _puts(string);
 	return (check);

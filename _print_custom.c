@@ -33,7 +33,7 @@ int print_bigS(va_list argsList, flags_t *f)
 			check += _puts(r);
 		}
 		else
-			check += _putchar(t[a];
+			check += _putchar(t[a]);
 	}
 	return (check);
 }
