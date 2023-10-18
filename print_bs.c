@@ -46,14 +46,14 @@ int print_hex_big(va_list argsList, flags_t *f)
 	return (check);
 }
 
-/*
-* print_binary - print a number in base 2 binary.
-* @argsList: va_list arguments from _printf
-* @f: pointer to the struct that determines
-* if a flag is passed to _printf
-* Description: the function calls convert) which in turns converts the input.
-* Return: a printed number of char
-*/
+/**
+ * print_binary - print a number in base 2 binary.
+ * @argsList: va_list arguments from _printf
+ * @f: pointer to the struct that determines
+ * if a flag is passed to _printf
+ * Description: the function calls convert) which in turns converts the input.
+ * Return: a printed number of char
+ */
 
 int print_binary(va_list argsList, flags_t *f)
 {
@@ -79,7 +79,7 @@ int print_octal(va_list argsList, flags_t *f)
 	unsigned int nb = va_arg(argsList, unsigned int);
 	char *string = convert(nb, 8, 0);
 	int check = 0;
-	
+
 	if (f->hash == 1 && string[0] != '0')
 		check += _putchar(0);
 	check += _puts(string);
