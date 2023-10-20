@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 .TH _printf "October 20, 2023" "version 1.0" "_printf man page"
+=======
+.TH _printf 1 "October 15, 2023" "version 1.0" "_printf man page"
+>>>>>>> a0994b500724ed29d0152bf67683326e0128e67b
 .SH NAME
 _printf - format and print data
 .SH SYNOPSIS
