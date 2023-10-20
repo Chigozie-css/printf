@@ -8,10 +8,10 @@
  * Return: number of char printed
  */
 
-int print_address(va_list nl, flags_t *f)
+int print_address(va_list argsList, flags_t *f)
 {
 	char *string;
-	unsigned long int b = va_arg(nl, unsigned long int);
+	unsigned long int b = va_arg(argsList, unsigned long int);
 
 	register int check = 0;
 	(void)f;
